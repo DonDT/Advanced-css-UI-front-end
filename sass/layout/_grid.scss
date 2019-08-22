@@ -3,7 +3,6 @@
 .row {
   //1140px, conventional
   max-width: $grid-width;
-  background-color: #eee;
   margin: 0 auto;
 
   &:not(:last-child) {
@@ -14,7 +13,6 @@
   //[class $(ends with) *(contsins) ^(starts with = '')]
 
   [class^="col-"] {
-    background-color: orangered;
     float: left;
     &:not(:last-child) {
       margin-right: $gutter-horizontal;
