@@ -1,0 +1,98 @@
+.form {
+  &__group:not(:last-child) {
+    margin-bottom: 2rem;
+  }
+
+  &__input {
+    font-size: 1.5rem;
+    // Input fields usually don't inherit
+    font-family: inherit;
+    color: inherit;
+    padding: 1.5rem 2rem;
+    border-radius: 2px;
+    background-color: rgba($color-white, 0.5);
+    border: none;
+    // we have to declare the border bottom to transparent first, before the focus, such that its doesn't add extra width to the element upon focus.
+    border-bottom: 3px solid transparent;
+    width: 98%;
+    display: block;
+    transition: all 0.3s;
+
+    // when we click on the input field
+    &:focus {
+      outline: none;
+      box-shadow: 0 1rem 2rem rgba($color-black, 0.1);
+      border-bottom: 3px solid $color-primary;
+    }
+    //When the inputed data is not of type specified
+    &:focus:invalid {
+      border-bottom: 3px solid $color-secondary-dark;
+    }
+    //Accessing and styling the placeholder
+    &::-webkit-input-placholder {
+      color: $color-grey-dark-2;
+    }
+  }
+
+  &__label {
+    font-size: 1.2rem;
+    font-weight: 700;
+    margin-left: 2rem;
+    margin-top: 0.7rem;
+    display: block;
+    transition: all 0.3s;
+  }
+
+  &__input:placeholder-shown + &__label {
+    // ~ general sibling selector. + adjacent sibling selector(right next to the first element)
+    // Sibling selector works when the label is after the input.
+    // these selectors makes the label invisible and moves it up as original position before clicking.
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-4rem);
+    // Typing then cancels these selectors and reveal it in its original position.
+  }
+  &__radio-group {
+    width: 49%;
+    display: inline-block;
+  }
+  &__radio-input {
+    display: none;
+  }
+  &__radio-label {
+    font-size: $default-font-size;
+    cursor: pointer;
+    position: relative;
+    padding-left: 4.5rem;
+  }
+  &__radio-button {
+    height: 3rem;
+    width: 3rem;
+    border: 5px solid $color-primary;
+    border-radius: 50%;
+    display: inline-block;
+    position: absolute;
+    left: 0;
+    top: 0;
+
+    &::after {
+      content: "";
+      display: block;
+      height: 1.3rem;
+      width: 1.3rem;
+      border-radius: 50%;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      background-color: $color-primary;
+      opacity: 0;
+      transition: opacity 0.2s;
+    }
+  }
+
+  //As soon as we hit the radio button, the radio input becomes checked. Next we select the sibling, the child, then the after.
+  &__radio-input:checked ~ &__radio-label &__radio-button::after {
+    opacity: 1;
+  }
+}
