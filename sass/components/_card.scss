@@ -63,6 +63,9 @@
     clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%);
     //background-blend-mode, blends the two backgrounds, and has many values
     background-blend-mode: screen;
+    // clip path took away the overflow hidden and thus the border radius was not implemented. So now we put it manually.
+    border-top-left-radius: 3px;
+    border-top-right-radius: 3px;
     &--1 {
       background-image: linear-gradient(
           to right bottom,

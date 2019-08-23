@@ -1,0 +1,62 @@
+.story {
+  width: 75%;
+  margin: 0 auto;
+  box-shadow: 0 3rem 6rem rgba($color-black, 0.1);
+  background-color: rgba($color-white, 0.6);
+  border-radius: 3px;
+  padding: 6rem;
+  padding-left: 9rem;
+  font-size: $default-font-size;
+  transform: skewX(-12deg);
+  position: relative;
+
+  &__shape {
+    width: 15rem;
+    height: 15rem;
+    float: left;
+
+    //The first value is the radius, 50% beign 50% of the width or height. Then 50% vertically, 50% horizontally. Also the element mst be floated, with defined dimentions.
+    // It defines whre and how the content flows around the element.
+    -web-kit-shape-outside: circle(50% at 50% 50%);
+    shape-outside: circle(50% at 50% 50%);
+    -web-kit-clip-path: circle(50% at 50% 50%);
+    clip-path: circle(50% at 50% 50%);
+    // Best way to move around elements that are floated is not to use padding or margin, but transform.
+    transform: translateX(-3rem) skewX(12deg);
+  }
+  &__img {
+    // The image is inside the rounded figure, so 100% means occupy the whole figure. width would not occupy the entire height.
+    height: 100%;
+    transform: translateX(-4rem) scale(1.3);
+    // ransformation needs a transition time, so whenever you transform, translate, use a transition.
+    transition: all 0.5s;
+    //backface-visibility: hidden;
+  }
+  &__text {
+    // we first skew the entire element, then unskew in the opposite direction, the direct children. Sice we already have a skew element, we have to unskew each child seperately
+    transform: skewX(12deg);
+  }
+  &__caption {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, 20%);
+    color: white;
+    text-transform: uppercase;
+    font-size: 1.7rem;
+    text-align: center;
+    opacity: 0;
+    transition: all 0.5s;
+    //backface-visibility: hidden;
+  }
+  // As soon as we hover the story div, we want to change the caption.
+  &:hover &__caption {
+    opacity: 1;
+    transform: translate(-50%, -50%);
+  }
+  &:hover &__img {
+    transform: translateX(-4rem) scale(1);
+    // Filter helps to blur, and the brightness- when given a value above 100, it's brighter, below 100, it's dimer.
+    // filter: blur(3px) brightness(80%)
+  }
+}
