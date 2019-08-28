@@ -16,6 +16,36 @@
     <title>Natours | Exciting tours for adventurous people</title>
   </head>
   <body>
+    <div class="navigation">
+      <input type="checkbox" class="navigation__checkbox" id="navi-toggle" />
+      <label for="navi-toggle" class="navigation__button">
+        <span class="navigation__icon">&nbsp;</span>
+      </label>
+      <div class="navigation__background">&nbsp;</div>
+      <nav class="navigation__nav">
+        <ul class="navigation__list">
+          <li class="navigation__item">
+            <a href="#" class="navigation__link"><span>01</span>About Natour</a>
+          </li>
+          <li class="navigation__item">
+            <a href="#" class="navigation__link"
+              ><span>02</span>Your Benefits</a
+            >
+          </li>
+          <li class="navigation__item">
+            <a href="#" class="navigation__link"
+              ><span>03</span>Popular tours</a
+            >
+          </li>
+          <li class="navigation__item">
+            <a href="#" class="navigation__link"><span>04</span>Stories</a>
+          </li>
+          <li class="navigation__item">
+            <a href="#" class="navigation__link"><span>05</span>Book Now</a>
+          </li>
+        </ul>
+      </nav>
+    </div>
     <header class="header">
       <div class="header__logo-box">
         <img src="img/logo-white.png" alt="logo" class="header__logo" />
@@ -25,7 +55,9 @@
           <span class="heading-primary--main">Outdoors</span>
           <span class="heading-primary--sub">is where life happens</span>
         </h1>
-        <a href="#" class="btn btn--white btn--animated">Discover our tours</a>
+        <a href="#section-tours" class="btn btn--white btn--animated"
+          >Discover our tours</a
+        >
       </div>
     </header>
 
@@ -132,7 +164,7 @@
           </div>
         </div>
       </section>
-      <section class="section-tours">
+      <section class="section-tours" id="section-tours">
         <div class="u-center-text u-margin-bottom-big">
           <h2 class="heading-secondary">
             Most Popular tours
@@ -166,7 +198,7 @@
                     <p class="card__price-only">Only</p>
                     <p class="card__price-value">€ 297</p>
                   </div>
-                  <a href="#" class="btn btn--white"> Book Now</a>
+                  <a href="#popup" class="btn btn--white"> Book Now</a>
                 </div>
               </div>
             </div>
@@ -198,7 +230,7 @@
                     <p class="card__price-only ">Only</p>
                     <p class="card__price-value">€ 497</p>
                   </div>
-                  <a href="#" class="btn btn--white"> Book Now</a>
+                  <a href="#popup" class="btn btn--white"> Book Now</a>
                 </div>
               </div>
             </div>
@@ -230,7 +262,7 @@
                     <p class="card__price-only">Only</p>
                     <p class="card__price-value">€ 897</p>
                   </div>
-                  <a href="#" class="btn btn--white"> Book Now</a>
+                  <a href="#popup" class="btn btn--white"> Book Now!</a>
                 </div>
               </div>
             </div>
@@ -419,6 +451,37 @@
         </div>
       </div>
     </footer>
+    <div class="popup" id="popup">
+      <div class="popup__content">
+        <div class="popup__left">
+          <img src="img/nat-8.jpg" alt="Tour photo" class="popup__img" />
+          <img src="img/nat-9.jpg" alt="Tour photo" class="popup__img" />
+        </div>
+        <div class="popup__right">
+          <a href="#section-tours" class="popup__close">&times;</a>
+          <h2 class="heading-secondary u-margin-bottom-small">
+            Start Booking Now
+          </h2>
+          <h3 class="heading-tertiary u-margin-bottom-small">
+            Important &ndash; Plaese read therese terms before booking
+          </h3>
+          <p class="popup__text">
+            Our Amazing trips offers lots of wonderful experiences that are
+            thrilling and would get your adrenaline fired up. Here are some
+            photos of people enjoying prestine natour. We look foward to meeting
+            you someday to explore the world and discover hidden treasures. Seen
+            through the eyes of all who have been here, the world is truly a
+            beautiful place.<br />
+            These photos are from satisfied customers, who look to inspire
+            others to experience where they've been and gain the same experience
+            or even better to enrich their awareness. We thank you for
+            considering us and we look forward to sharing these moments with
+            you.
+          </p>
+          <div class="btn btn--green">Book Now</div>
+        </div>
+      </div>
+    </div>
 
     <!-- <section class="grid-test">
       <div class="row">
