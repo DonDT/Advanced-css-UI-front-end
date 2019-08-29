@@ -52,11 +52,21 @@
     // we cannot have two transform declarations within the same element, since we already has one from the mixin, the only solution here is to repeat it, then it works.
     transform: translate(-50%, -50%) scale(0.25);
     transition: all 0.5s 0.2s;
+
+    @include respond(tab-port) {
+      display: block;
+    }
   }
   &__left {
     width: 33.333333%;
     float: left;
     display: table-cell;
+
+    @include respond(tab-port) {
+      float: none;
+      width: 100%;
+      display: block;
+    }
   }
   &__right {
     width: 66.666667%;
@@ -64,6 +74,12 @@
     display: table-cell;
     vertical-align: center;
     padding: 3rem 5rem;
+
+    @include respond(tab-port) {
+      float: none;
+      width: 100%;
+      display: block;
+    }
   }
   &__img {
     display: block;

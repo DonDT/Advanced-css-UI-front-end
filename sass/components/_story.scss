@@ -10,6 +10,16 @@
   transform: skewX(-12deg);
   position: relative;
 
+  @include respond(tab-port) {
+    width: 100%;
+    padding: 4rem;
+    padding-left: 7rem;
+  }
+
+  @include respond(phone) {
+    transform: skewX(0);
+  }
+
   &__shape {
     width: 15rem;
     height: 15rem;
@@ -23,6 +33,10 @@
     clip-path: circle(50% at 50% 50%);
     // Best way to move around elements that are floated is not to use padding or margin, but transform.
     transform: translateX(-3rem) skewX(12deg);
+
+    @include respond(phone) {
+      transform: translateX(-3rem) skewX(0);
+    }
   }
   &__img {
     // The image is inside the rounded figure, so 100% means occupy the whole figure. width would not occupy the entire height.
@@ -35,6 +49,10 @@
   &__text {
     // we first skew the entire element, then unskew in the opposite direction, the direct children. Sice we already have a skew element, we have to unskew each child seperately
     transform: skewX(12deg);
+
+    @include respond(phone) {
+      transform: skewX(0);
+    }
   }
   &__caption {
     position: absolute;
