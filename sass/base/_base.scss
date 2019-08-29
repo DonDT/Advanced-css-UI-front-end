@@ -28,3 +28,10 @@ body {
     padding: 0;
   }
 }
+
+// when user selects a part of text.
+
+::selection {
+  background-color: $color-primary;
+  color: $color-white;
+}
